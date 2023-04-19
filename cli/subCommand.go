@@ -25,11 +25,12 @@ func main() {
 		fmt.Println("subcommand:", "foo")
 		fmt.Println("enable:", *fooEnable)
 		fmt.Println("name:", *fooName)
+		fmt.Println("tail:", fooCmd.Args())
 	case "bar":
 		barCmd.Parse(os.Args[2:])
 		fmt.Println("subcommand:", "bar")
 		fmt.Println("level:", *barLevel)
-
+		fmt.Println("tail:", barCmd.Args())
 	default:
 		fmt.Println("expected 'foo' or 'bar' subcommands")
 		os.Exit(1)
